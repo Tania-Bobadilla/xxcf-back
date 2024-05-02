@@ -1,32 +1,36 @@
-const {Client} = require ("pg");
+const { Client, Pool} = require ("pg");
+// const {response} = require("express")
 
-const client = new Client ({
+const pool = new Pool ({
     user: 'postgres_master',
     password: 'mP6Z}05z',
-    host:'localhost',
-    port: 5432, //default
+    host:'rds-beauter.cynjfvcwkww2.us-east-1.rds.amazonaws.com', 
+    port: 5432, 
     database: 'beauterbd',
 });
 
-// module.exports = {
-//     query: (text, params) => client.query(text, params)
-// };
-
-client.connect((err) => {
+pool.connect((err) => {
     if (err) {
-        console.error("connection error", err.stack)
+        console.error("error de conexion", err.stack)
     } else {
-        console.log("connected")
+        console.log("conectado")
     }
-});
+})
 
-module.exports = client;
 
-// client.query(`Select * from nombres`, (err, res) => {
-//     if(!err){
-//         console.log(res.rows)
-//     }else{
-//          console.log(err.message);
-//     }
-//     client.end;
-// })
+// const createTblQry = `CREATE TABLE prueba (
+//     nombre serial PRIMARY KEY,
+//     direccion VARCHAR (50) UNIQUE NOT NULL,
+//     pais VARCHAR (50) UNIQUE NOT NULL,
+//     ciudad VARCHAR (50) UNIQUE NOT NULL);`;
+
+// pool.query(createTblQry).then((Response) => {
+//         console.log("tabla creada");
+//         console.log(response);
+//     })
+//     .catch((err) => {
+//       console.log(err);      
+//     });
+    
+
+module.exports = pool;
