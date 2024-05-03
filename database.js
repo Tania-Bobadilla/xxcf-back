@@ -7,13 +7,16 @@ const pool = new Pool ({
     host:'rds-beauter.cynjfvcwkww2.us-east-1.rds.amazonaws.com', 
     port: 5432, 
     database: 'beauterbd',
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 pool.connect((err) => {
     if (err) {
         console.error("error de conexion", err.stack)
     } else {
-        console.log("conectado")
+        console.log("conectado!!")
     }
 })
 
