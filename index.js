@@ -1,10 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 // const pool = require ("./database")
+const formRoutes = require("./routes/formRoutes")
 
 
 //instanciar express (llamar a todas las funciones de express)
 const app = express();
+
+app.use(formRoutes)
+
+// require("dotenv").config();
+// const port = process.env.PORT;
 
 //middlewares
 app.use(express.json());

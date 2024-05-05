@@ -19,6 +19,19 @@ const pool = new Pool ({
     }
 });
 
+// (async () => {
+//     const client = await pool.connect();
+//     try {
+//         const {rows} = await client.query('SELECT current_user');
+//         const currentUser = rows [0] ['currrent_user']
+//         console.log(currentUser);
+//     } catch (err) {
+//         console.log(err);
+//     } finally {
+//         client.release();
+//     }
+// })();   
+
 pool.connect((err) => {
     if (err) {
         console.error("error de conexion", err.stack)
