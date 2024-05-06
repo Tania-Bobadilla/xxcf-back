@@ -14,23 +14,13 @@ const pool = new Pool ({
     host: host, 
     port: port, 
     database: database,
+    // ssl: true
     ssl: {
         rejectUnauthorized: false
     }
 });
 
-// (async () => {
-//     const client = await pool.connect();
-//     try {
-//         const {rows} = await client.query('SELECT current_user');
-//         const currentUser = rows [0] ['currrent_user']
-//         console.log(currentUser);
-//     } catch (err) {
-//         console.log(err);
-//     } finally {
-//         client.release();
-//     }
-// })();   
+ 
 
 pool.connect((err) => {
     if (err) {
@@ -41,19 +31,7 @@ pool.connect((err) => {
 })
 
 
-// const createTblQry = `CREATE TABLE prueba (
-//     nombre serial PRIMARY KEY,
-//     direccion VARCHAR (50) UNIQUE NOT NULL,
-//     pais VARCHAR (50) UNIQUE NOT NULL,
-//     ciudad VARCHAR (50) UNIQUE NOT NULL);`;
 
-// pool.query(createTblQry).then((Response) => {
-//         console.log("tabla creada");
-//         console.log(response);
-//     })
-//     .catch((err) => {
-//       console.log(err);      
-//     });
     
 
 module.exports = pool;
