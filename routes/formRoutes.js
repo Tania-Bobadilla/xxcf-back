@@ -1,21 +1,23 @@
-const { Router } = require("express");
+const {Router} = require("express");
+const pool = require("../db");
+//control + espacio en las llaves para autocompletar
+const {getData, createData, updateData, deleteData} = require ("../controllers/formControllers")
 
 const router = Router();
 
-router.get("/form", (req, res) => {
-    res.send("leyendo informacion del formulario")
-});
+router.get("/form", getData)
 
-router.post("/form", (req, res) => {
-    res.send("mandando informacion al formulario")
-});
+// router.get("/form", async (req, res) => {
+//     // res.send("leyendo informacion del formulario")
+//     const result = await pool.query("SELECT NOW()");
+//     console.log(result);
+//     res.json("executed")
+// });
 
-router.put("/form", (req, res) => {
-    res.send("actualizando informacion del formulario")
-});
+router.post("/form", createData) 
 
-router.delete("/form", (req, res) => {
-    res.send("borrando informacion del formulario")
-});
+router.put("/form", updateData);
+
+router.delete("/form", deleteData);
 
 module.exports = router

@@ -1,4 +1,4 @@
-const { Client, Pool} = require ("pg");
+const {Pool} = require ("pg");
 require("dotenv").config();
 const user = process.env.USER
 const password = process.env.PASSWORD
@@ -21,7 +21,7 @@ const pool = new Pool ({
 });
 
  
-
+//puedo hacer esto con el try catch
 pool.connect((err) => {
     if (err) {
         console.error("error de conexion", err.stack)

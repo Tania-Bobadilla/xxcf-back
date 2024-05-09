@@ -1,29 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 // const pool = require ("./database")
-const formRoutes = require("./routes/formRoutes")
+const formRoutes = require("./routes/formRoutes");
 
+
+// app.use(cors());
 
 //instanciar express (llamar a todas las funciones de express)
 const app = express();
 
 app.use(formRoutes)
 
-require("dotenv").config();
-const port = process.env.PORT;
+// require("dotenv").config();
+// const port = process.env.PORT;
 
 //middlewares
-app.use(express.json());
-app.use(cors());
+// app.use(express.json());
+app.use(express.json())
 
-// app.use()
+// app.use(cors());
 
 
-
-//ruta
-// app.get("/addform", (req, res) => {
-//     console.log(req.body);
-//     res.send("respuesta recibida" + req.body);
-// })
-
-app.listen(port, () => console.log("servidor levantado en puerto 4000"))
+app.listen(4000, () => console.log("servidor levantado en puerto 4000"))
