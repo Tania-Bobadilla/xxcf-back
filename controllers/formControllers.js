@@ -6,11 +6,22 @@ const getData = async (req, res) => {
     }
 };
 
+// let formsInfo = [];
+
 const createData = async (req, res) => {
     
-    // const formInfo = req.body
+    // try {
+    //     const formInfo = req.body
+
+    //     formsInfo.push(formInfo)
+
+    //     res.json({success: true, message: "se subio la info"})
+    // } catch (error) {
+    //     res.json({success: false, message: error.message})
+    // }
+    const formInfo = req.body
     console.log(req.body)
-    // res.send("mandando informacion al formulario")
+    res.json({success: true, message: "soy el mapa"})
 };
     
 
