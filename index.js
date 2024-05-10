@@ -1,22 +1,28 @@
 const express = require("express");
-const cors = require("cors");
-// const pool = require ("./database")
 const formRoutes = require("./routes/formRoutes");
 
 
 // app.use(cors());
 
+
+
 //instanciar express (llamar a todas las funciones de express)
 const app = express();
 
+require("./db")
+
+app.use(express.json())
+
 app.use(formRoutes)
+
+
 
 // require("dotenv").config();
 // const port = process.env.PORT;
 
 //middlewares
-// app.use(express.json());
-app.use(express.json())
+
+
 
 // app.use(cors());
 

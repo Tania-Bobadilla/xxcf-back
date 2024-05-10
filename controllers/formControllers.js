@@ -8,9 +8,9 @@ const getData = async (req, res) => {
 
 const createData = async (req, res) => {
     
-    const formInfo = req.body
-    console.log(formInfo)
-    res.send("mandando informacion al formulario")
+    // const formInfo = req.body
+    console.log(req.body)
+    // res.send("mandando informacion al formulario")
 };
     
 
@@ -22,4 +22,9 @@ const updateData = async (req, res) => {
     res.send("actualizando informacion del formulario")
 }; 
 
-module.exports = {getData, createData, deleteData, updateData}
+module.exports = {
+                    getData, 
+                    createData,
+                    deleteData, 
+                    updateData
+                }
