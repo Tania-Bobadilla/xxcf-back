@@ -15,9 +15,9 @@ const pool = new Pool ({
     port: port, 
     database: database,
     // ssl: true
-    ssl: {
-        rejectUnauthorized: false
-    }
+    // ssl: {
+    //     rejectUnauthorized: false
+    // }
 });
 
  
