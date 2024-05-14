@@ -19,8 +19,8 @@ app.use(formRoutes)
 
 
 
-require("dotenv").config();
-const port = process.env.PORT;
+// require("dotenv").config();
+// const port = process.env.PORT;
 
 //middlewares
 
@@ -28,5 +28,5 @@ const port = process.env.PORT;
 
 // app.use(cors());
 
-
-app.listen(port, () => console.log("servidor levantado en puerto 4000"))
+//antes 4000
+app.listen(8080, () => console.log("servidor levantado en puerto 8080"))
