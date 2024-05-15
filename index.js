@@ -29,4 +29,4 @@ app.use(formRoutes)
 // app.use(cors());
 
 //antes 4000
-app.listen(4000, () => console.log("servidor levantado en puerto 8080"))
+app.listen(8080, () => console.log("servidor levantado en puerto 4000"))
