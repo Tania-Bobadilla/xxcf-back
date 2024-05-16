@@ -20,4 +20,4 @@ app.use(formRoutes)
 app.listen(8080, () => console.log("servidor levantado en puerto 8080"))
 
 //en terminal de putty/linux, para detener puerto en uso
-// npx kill-port 3000
+// npx kill-port 8080
