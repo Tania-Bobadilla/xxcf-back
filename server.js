@@ -16,4 +16,4 @@ app.get("/", async (req, res) => {
     }
 });
 
-app.listen(port, () => console.log("servidor levantado en puerto 8080"))
+app.listen(port, () => console.log("servidor se levantado en puerto 8080!"))
